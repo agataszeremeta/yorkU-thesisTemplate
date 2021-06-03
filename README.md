@@ -6,4 +6,4 @@ The template follows the technical requirements set by FGS (valid in 2021), to t
 
 ## Instructions for Use
 - To be completed
-- A sample document will be provided under the *example/* folder.
+- A sample .tex file and its compiled PDF is provided under the *example/* folder
