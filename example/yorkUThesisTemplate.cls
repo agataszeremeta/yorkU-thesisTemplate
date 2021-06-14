@@ -79,7 +79,6 @@
 \addcontentsline{toc}{chapter}{List of Tables}
 \@starttoc{lot}}
 
-
 %% Defining Options for Front Matter
 \def\abstractfile#1{\gdef\@abstractfile{#1}}
 \def\dedicationfile#1{\gdef\@dedicationfile{#1}}
@@ -104,11 +103,12 @@
 	\@ifdefined {@abstractfile}{\makeabstract}
 	\@ifdefined {@dedicationfile}{\makededication}
 	\@ifdefined {@acknowledgementsfile}{\makeacknowledgements}
-	% \@ifdefined {@abbreviationsfile}{\makeabbreviations}
 	\tableofcontents
   	\ifthenelse{\boolean{hastables}}{\listoftables}{}
   	\clearpage
   	\ifthenelse{\boolean{hasfigures}}{\listoffigures}{}
+  	\clearpage
+  	\@ifdefined {@abbreviationsfile}{\makeabbreviations}
   	\clearpage
   }
   
@@ -162,16 +162,22 @@
   \newpage}
    
 \def\makeabbreviations{
-  \chapter*{Abbreviations}
-  \addcontentsline{toc}{chapter}{Abbreviations}
+  \chapter*{List of Abbreviations}
+  \addcontentsline{toc}{chapter}{List of Abbreviations}
+  %\onehalfspacing
+  \doublespacing
   \noindent
   \@input{\@abbreviationsfile}
   \newpage}
   
+ 
+  
 \def\formatmainmatter{	
 	\normalsize
 	\flushleft
-	\onehalfspacing
+	% \singlespacing
+	% \onehalfspacing
+	\doublespacing
 	\setlength{\parindent}{33pt}
 	\setlength{\parskip}{11pt}
 	\pagenumbering{arabic}
