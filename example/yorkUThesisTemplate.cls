@@ -46,7 +46,7 @@
 
 %% Defining Functions
 %\newcommand{\spacing}[1]{\renewcommand{\baselinestretch}{#1}%\large\normalsize}
-\def\hugeskip{\vskip 24pt plus 8pt minus 8pt} 
+\def\hugeskip{\vskip 24pt plus 8pt minus 8pt}
 \def\@ifdefined#1#2{\@ifundefined{#1}{}{#2}}
 
 \titleformat{\chapter}[display]
@@ -56,20 +56,20 @@
 	{\LARGE\uppercase}
 \titlespacing{\chapter}
   {0pt}{75pt}{25pt}
-  
-\titleformat*{\section}{\Large}  
+
+\titleformat*{\section}{\Large}
 \titlespacing{\section}
   {0pt}{10pt}{10pt}
 
-\titleformat*{\subsection}{\Large}  
+\titleformat*{\subsection}{\Large}
 \titlespacing{\subsection}
-  {0pt}{10pt}{10pt} 
+  {0pt}{10pt}{10pt}
 
 \renewcommand\contentsname{Table of Contents}
 \renewcommand\tableofcontents{\chapter*{\LARGE \MakeUppercase{\contentsname}}
 \@starttoc{toc}}
 
-\renewcommand\listfigurename{List of Figures} 
+\renewcommand\listfigurename{List of Figures}
 \renewcommand\listoffigures{\chapter*{\LARGE \MakeUppercase{\listfigurename}}
 \addcontentsline {toc}{chapter}{List of Figures}
 \@starttoc{lof}}
@@ -85,7 +85,7 @@
 \def\acknowledgementsfile#1{\gdef\@acknowledgementsfile{#1}}
 \def\abbreviationsfile#1{\gdef\@abbreviationsfile{#1}}
 \def\title#1{\gdef\@title{#1}}
-\def\author#1{\gdef\@author{#1}} 
+\def\author#1{\gdef\@author{#1}}
 \def\masterof#1{\gdef\@masterof{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\datemonth#1{\gdef\@datemonth{#1}}
@@ -99,7 +99,7 @@
 	\pagestyle{empty}
 	\maketitlepage
 	\pagenumbering{roman}
-	\setcounter{page}{2}	
+	\setcounter{page}{2}
 	\@ifdefined {@abstractfile}{\makeabstract}
 	\@ifdefined {@dedicationfile}{\makededication}
 	\@ifdefined {@acknowledgementsfile}{\makeacknowledgements}
@@ -111,7 +111,7 @@
   	\@ifdefined {@abbreviationsfile}{\makeabbreviations}
   	\clearpage
   }
-  
+
 \def\maketitlepage{
   \vspace*{.85in}
   \begin{center}
@@ -121,7 +121,7 @@
     \hugeskip
     \hugeskip
     {\bigskip \MakeUppercase{\@author}}
-  	\hugeskip \hugeskip \hugeskip \hugeskip 
+  	\hugeskip \hugeskip \hugeskip \hugeskip
   	\ifmasters A THESIS \else A DISSERTATION \fi
   	SUBMITTED TO \\
   	THE FACULTY OF GRADUATE STUDIES \\
@@ -133,13 +133,13 @@
   	GRADUATE PROGRAM IN \MakeUppercase{\@department} \\
   	YORK UNIVERSITY \\
   	TORONTO, ONTARIO \\
-  	\hugeskip \hugeskip 
+  	\hugeskip \hugeskip
   	\MakeUppercase{\@datemonth} \MakeUppercase{\@dateyear}
-  	\hugeskip \hugeskip \hugeskip 
+  	\hugeskip \hugeskip \hugeskip
   	$\copyright$\ \MakeUppercase{\@author}, \MakeUppercase{\@dateyear}
   \end{center}
   \newpage}
-  
+
 \def\makeabstract{
   \chapter*{Abstract}
   \addcontentsline{toc}{chapter}{Abstract}
@@ -153,14 +153,14 @@
   \noindent
   \@input{\@dedicationfile}
   \newpage}
-  
+
 \def\makeacknowledgements{
   \chapter*{Acknowledgements}
   \addcontentsline{toc}{chapter}{Acknowledgements}
   \noindent
   \@input{\@acknowledgementsfile}
   \newpage}
-   
+
 \def\makeabbreviations{
   \chapter*{List of Abbreviations}
   \addcontentsline{toc}{chapter}{List of Abbreviations}
@@ -169,10 +169,8 @@
   \noindent
   \@input{\@abbreviationsfile}
   \newpage}
-  
- 
-  
-\def\formatmainmatter{	
+
+\def\formatmainmatter{
 	\normalsize
 	\flushleft
 	% \singlespacing
@@ -183,6 +181,5 @@
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 	}
-  
-%% End of file `yorkUThesisTemplate.cls'.
 
+%% End of file `yorkUThesisTemplate.cls'.

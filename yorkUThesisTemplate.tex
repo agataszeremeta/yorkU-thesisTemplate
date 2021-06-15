@@ -2,7 +2,8 @@
 
 % Preparing Used Packages
 %\usepackage{showframe} % Confirm all work within set margins
-
+\usepackage[english]{babel}
+\usepackage{apacite}
 
 % ***** Variables that User Must Define *****
 % title 		-> Title of Thesis
@@ -14,6 +15,7 @@
 % masterof		-> Type of Master's Degree You Are Attempting. If the Boolean masters is false, This Has No Effect (e.g., Science)
 % hasfigures	-> Boolean Describing if there are Figures in the Document for List of Figures
 % hastables	-> Boolean Describing if there are Tables in the Document for List of Tables
+% \bibfilename	-> The name of your BibTeX references file, without the .bib extension
 
 \title{THESIS TITLE}
 \author{YOUR NAME}
@@ -23,7 +25,7 @@
 \setboolean{masters}{true}
 \masterof{[DEGREE NAME]}
 
-\setboolean{hasfigures}{true} 
+\setboolean{hasfigures}{true}
 \setboolean{hastables}{true}
 
 % ========== Preliminary Matter =================
@@ -33,13 +35,21 @@
 \acknowledgementsfile{frontmatter/acknowledgements.tex}
 %\abbreviationsfile{frontmatter/abbreviations.tex}
 
+% ========== Back Matter =================
+% Files must be in same folder as working directory. Otherwise, include path, e.g., <current dir>/<backmatter>/*
+\newcommand{\bibfilename}{backmatter/references}
+
 \begin{document}
 \makefrontmatter
 \formatmainmatter
 
 % ========== THESIS CONTEXT WRITTEN HERE  =================
 \chapter{Chapter Label}
+
+Random citation test \cite{einstein}.
+
 \section{Section}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis purus imperdiet, dapibus quam nec, fringilla turpis. Sed cursus, mi quis scelerisque eleifend, augue elit vestibulum nulla, sed fringilla ante nibh at neque. Vivamus ac odio faucibus, imperdiet urna vel, tincidunt turpis. Praesent aliquet est orci, sed sagittis velit feugiat nec. In ut lacus vel purus placerat congue. Sed ut purus accumsan, egestas diam nec, scelerisque orci. Ut ornare risus ac tortor congue, ac blandit nunc dignissim. Aliquam vitae sem at ipsum elementum faucibus. Aliquam erat volutpat. Maecenas ultricies quam a rhoncus pellentesque. Maecenas rhoncus euismod vestibulum. Aenean sit amet ex quis sapien luctus faucibus in ut mi. Donec egestas dolor eu lectus congue finibus. Nulla suscipit pulvinar semper. Suspendisse viverra ultrices odio.
 
 In libero neque, fermentum sed augue ut, faucibus aliquam nisl. Sed molestie sollicitudin lorem eu dignissim. Vivamus scelerisque, eros ut consequat volutpat, diam leo vehicula dui, eu convallis velit arcu ac velit. Aliquam vehicula, est ac mollis fermentum, quam nulla cursus eros, nec faucibus turpis metus vitae quam. Nullam tempor, eros ut euismod malesuada, magna enim condimentum magna, sed vestibulum arcu nisi non neque. Fusce porta risus eget odio bibendum, ac fringilla dui malesuada. Sed at mauris fermentum, egestas nisl ac, convallis ipsum. Phasellus fermentum est velit, quis aliquam eros gravida vitae. Donec enim arcu, porttitor non mollis at, tincidunt sit amet ipsum. Maecenas et eros vel velit convallis luctus. Quisque accumsan tellus eu nisl egestas venenatis. Vivamus varius sapien non tellus feugiat fringilla. Integer faucibus non urna non mollis. Nam egestas ipsum id nisl mattis, ornare congue felis varius. Vivamus et justo tempus, commodo ligula vitae, sollicitudin nunc. Nunc placerat fringilla arcu id euismod.
@@ -50,5 +60,8 @@ In condimentum nibh lacus, eu euismod risus consequat ac. Duis quis lacinia arcu
 Ut eget condimentum nunc. Aliquam id augue porta ipsum malesuada convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce non arcu nulla. Pellentesque et feugiat nulla. Proin imperdiet mattis semper. Cras ex ante, tempor ac nibh vel, congue porttitor leo. Praesent eget gravida erat. Donec vestibulum mi diam. Quisque luctus cursus sem at pretium. Mauris a vehicula tellus. Maecenas efficitur arcu eu velit lacinia faucibus.
 
 Duis non elementum nibh. Aliquam porttitor ultrices sapien, vel hendrerit dui faucibus a. Nulla accumsan blandit mauris quis mattis. In libero nunc, blandit eu accumsan in, posuere eu dolor. Curabitur vitae diam luctus, placerat sem cursus, ultricies ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam eget odio vitae sem ultricies dignissim. Sed nec tristique leo. Vestibulum et venenatis orci, fringilla lobortis nunc. Nullam sed nisi at lectus pulvinar dictum.
+
+\bibliographystyle{apacite} % TRY REMOVING THIS IF ERROR MESSAGE RECEIVED
+\bibliography{\bibfilename}
 
 \end{document}
